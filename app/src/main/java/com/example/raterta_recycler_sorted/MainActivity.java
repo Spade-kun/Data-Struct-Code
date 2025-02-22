@@ -17,6 +17,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Declare variables
     private RecyclerView recyclerView;
     private PersonAdapter adapter;
     private List<Person> personList;
@@ -27,12 +28,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initialize views
         recyclerView = findViewById(R.id.recyclerView);
+
+        // Initialize buttons
         Button sortButton = findViewById(R.id.sortButton);
         Button maleButton = findViewById(R.id.maleButton);
         Button femaleButton = findViewById(R.id.femaleButton);
         Button resetButton = findViewById(R.id.resetButton);
 
+        // Initialize data
         personList = Arrays.asList(
                 new Person("John", "Male"),
                 new Person("Alice", "Female"),
@@ -46,12 +51,16 @@ public class MainActivity extends AppCompatActivity {
                 new Person("Isabella", "Female")
         );
 
+        // Create a copy of the original list
         originalList = new ArrayList<>(personList);
 
+        // Set up RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new PersonAdapter(personList);
         recyclerView.setAdapter(adapter);
 
+
+        // Set click listeners for buttons
         sortButton.setOnClickListener(v ->{
             List<Person> sortedList = new ArrayList<>(personList);
             Collections.sort(sortedList, (p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName()));
