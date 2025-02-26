@@ -8,30 +8,45 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-<!--    Buttons-->
+    <!-- Search Bar -->
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search"
+        android:padding="8dp"
+        android:background="@android:color/white"
+        android:drawablePadding="10dp"
+        android:drawableStart="@android:drawable/ic_menu_search" />
+
+    <!-- Buttons -->
     <Button
         android:id="@+id/sortButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Alphabetically" />
+        android:text="Alphabetically"
+        android:backgroundTint="@android:color/holo_blue_light" />
 
     <Button
         android:id="@+id/maleButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show Males" />
+        android:text="Show Males"
+        android:backgroundTint="@android:color/holo_green_light" />
 
     <Button
         android:id="@+id/femaleButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show Females" />
+        android:text="Show Females"
+        android:backgroundTint="@android:color/holo_red_light" />
 
     <Button
         android:id="@+id/resetButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reset" />
+        android:text="Reset"
+        android:backgroundTint="@android:color/holo_orange_light" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
